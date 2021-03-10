@@ -1,0 +1,633 @@
+
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+    font-size: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+/*　パディングをサイズ内側にする処理　*/
+
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+
+
+/*ヘッダー？？ここがヘッダーなのか。。。。。。。。*/
+header{
+    text-align: center;
+    background-image:url(../img/mainbg.png);
+    height: 300px;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-size: 48px;
+}
+.h1-text{
+    font-size: 36px;
+}
+
+/*ナビタグ！！！いこうーーー フレキシブルに対応するときのタグあり「Ihone」だね*/
+.Iphone-nav{
+    display: none;
+}
+.img-logo1{
+    display: none;
+}
+.Iphone-nav-flex{
+display: none;
+}
+.pc-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px #DDDDDD		;
+    position: absolute;
+    width: 100%;
+    background-color:snow;
+    max-width: 960px;
+    z-index: 9999;
+}
+nav a{
+    color: black;
+}
+/* スクロールのやつ あのトップで止まるようにするやあつ*/
+.pc-nav.fixed{
+    position: fixed;
+    top: 0;
+}
+
+/*aboutいくよ！！*/
+h2{
+    font-size: 24px;
+    color: yellow;
+    padding-top: 120px;
+    padding-bottom: 24px;
+}
+.about-title{
+    padding-bottom: 64px;
+}
+.about-text{
+    padding-bottom: 40px;
+}
+
+/*回れ回れ写真 写真の大きさ　動きの指定　動かすの順番のはず-------------------*/
+.slide-wrap{
+   display: flex;
+   overflow: hidden;
+} 
+ .slide-wrap img{
+    width: 100%;
+    height: 100%;
+} 
+/* 動きの指定 */
+ @keyframes loop{
+    0%{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes loop2{
+   0%{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-200%);
+    }
+}
+/*そんでで動かす */
+.slide-wrap img:first-child{
+animation: loop 10s -5s linear infinite;
+}
+.slide-wrap img:last-child{
+animation: loop2 10s  linear infinite;
+} 
+/*コースいくよ！！　横からふわっと　Jquery使ってみよう*/
+#COURSE{
+margin-top: 64px;
+
+}
+h3{
+    font-size: 24px;
+    color: black;    
+}
+.h3-text{
+    padding-bottom: 64px;   
+}
+.corse{
+    text-align: start;
+    background-color: rgb(243, 237, 182);
+}
+.h3-text-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-img{
+    width: 50%;
+}
+.img{
+    width: 100%;
+}
+.course-title{
+    font-size: 24px;
+    padding-bottom: 40px;
+}
+.couse-text{
+    font-size: 13px;
+}
+.h4-h6{
+    width: 50%;
+    padding-left: 48px;
+}
+.h5{
+    width: 50%;
+    padding-right: 48px;
+}
+.main-course{padding-bottom: 64px;
+}
+.text-box{
+    text-align: start;
+    background-color: #fafafa;
+}
+/* 横からアニメーション！！！！フワフワ */
+.h3-text-1{
+	opacity : 0.1;
+	 transform : translate(400px,0); /*スタート位置の指定はここだからな(# ﾟДﾟ)*/
+	transition : all 1000ms;
+	}
+/* 画面内に入ったら */
+.h3-text-1.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+	}
+
+/*newsいくよ！！！*/
+#NEWS{
+font-size: 24px;
+}
+.title-call{
+    padding-bottom: 64px;
+}
+
+.news-text{
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 56px;
+}
+.news-img{
+    padding-bottom:32px;
+}
+.news-img-box{
+    padding-bottom: 24px;
+}
+.btn{
+    text-decoration: none;
+    background-color: #ffd000;
+    width: 300px;
+    height: 30px;
+    font-size: 21px;
+    margin: auto;
+}
+.more{
+    color: snow;
+}
+/* なんのこっちゃfadein */
+.fadein {
+	opacity : 0.1;
+    transform : translate(0, 200px); /*スタート位置の指定はここだからな(# ﾟДﾟ)*/
+    transition : all 500ms;
+	}
+/* 画面内に入ったら */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+	}
+/* カーソル次第で浮かせます！！！ */
+.fadein{
+
+    padding: 5px 10px; 
+    cursor: pointer;
+    transition: all 0.3s ease 0s;/*なんかクリックできると勘違いされるかな？*/
+}
+.fadein:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-10px);
+}
+
+/*アクセスここから*/
+.acsess-title{
+    margin-top: 48px;
+    padding:64px 0px 64px 0px ;
+    background-color: #fafafa;
+}
+#ACSESS{
+    font-size: 24px;
+padding-bottom: 24px;
+}
+.ggmap {
+    position: relative;
+}
+.ggmap:before {
+    display: block;
+    padding-top: 56.25%  /*比率あってるかな？？*/
+}
+
+.ggmap iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*googlemap 終わり・テキストいくよおお*/
+
+.acsess-text{
+    line-height: 20px;
+    background-color: #fafafa;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+}
+.name-school{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+    padding-top: 64px;
+    padding-right: 20px;
+}
+.school{
+    font-weight: bold;
+    padding-right: 48px;
+}
+.name-adress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+    padding-left: 200px;
+}
+.adress{
+    font-weight: bold;
+    padding-right: 48px;
+}
+.name-tell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+    padding-right: 105px;
+}
+.tell{
+    font-weight: bold;
+    padding-right: 48px;
+}
+.name-fax{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+    padding-right: 105px;
+}
+.fax{
+    font-weight: bold;
+    padding-right: 48px;
+}
+.name-mail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+}
+.mail{
+    font-weight: bold;
+    padding-right: 28px;
+}
+
+
+/*コンタクト行くよ！！！！*/
+/* コンタクトすしない人もいるから非表示 */
+ .all-contact{
+    margin: 2em 0;
+    padding: 0;
+} 
+#label1{
+display: none;
+}
+#CONTACT{
+    font-size: 24px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+#CONTACT::after {
+  border-bottom: solid 4px #DDDDDD;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .3s ease;
+  width: 0;
+}
+#CONTACT:hover::after {
+    width: 100%;
+}
+.all-contact .hide-CONTACT{
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+.all-contact input:checked ~ .hide-CONTACT {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+/* クリックすると中身ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.contact-text{
+    
+    padding-top: 20px;
+}
+
+.contact-text-box{
+    padding-top: 40px;
+    padding-bottom: 32px;
+}
+.point{
+    padding-bottom: 80px;
+}
+
+/*formですーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.form{
+    margin: 0 auto;
+}
+.form-name{
+    border:solid 1px hsl(0, 0%, 75%);
+
+}
+.form-left{
+    display: inline-block;
+    text-align: start;
+    margin-right: 120px; 
+    width:150px;
+}
+.select-radio{
+    display: flex;
+    justify-content: space-around;
+}
+.form-p{
+margin-left: 153px;
+}
+
+.radiobt{
+    display: block;
+    padding-bottom: 24px;
+    font-size: 14px;
+    text-align: left;
+}
+.radio1{
+    padding-bottom: 40px;   
+}
+/* ちょっとかっこよさげなテキストエリア */
+.form-coment{
+    outline: none;
+    vertical-align: top;
+    border:solid 1px #bfbfbf;
+    width: 328px;
+    height: 108px;
+    margin-bottom: 40px;  
+    margin-top: 8px;
+    list-style: none;
+    display: inline-block;
+}
+
+.sabmit{
+    color:snow;
+    text-decoration: none;
+    background-color: #ffd000;
+    font-size: 18px;
+    width: 298px;
+    height: 54px;
+    cursor: pointer; 
+    transition : .3s; 
+    
+} 
+.sabmit:hover{    
+   opacity: 0.7;
+}
+/* トップに戻してあげる */
+.top-bt {
+
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+
+}
+
+.top-bt a {
+    display: block;
+    background-color: #ccc;
+    text-align: center;
+    color: #222;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 5px 10px;
+    filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.top-bt a:hover {
+    display: block;
+    background-color: #b2d1fb;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    padding:5px 10px;
+} 
+
+/* 最後やんけ！！！！ */
+.copy{
+    padding: 32px ;
+    background-color: #707070;
+}
+h10{
+font: 18px;
+color:snow}
+
+
+/* クリックできる所にアニメーション */
+
+a::after {
+  border-bottom: solid 4px #DDDDDD;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .3s ease;
+  width: 0;
+}
+a:hover::after {
+    width: 100%;
+}
+
+
+/*レスポンシブ行ってみよう！！*/
+
+@media screen and (max-width: 767px){ 
+.R-header{
+    display:flex;
+    flex-direction: column-reverse;
+}
+.pc-nav{
+    display: none;
+}
+
+/*hamubaaaaaaaaaarger*/
+.Iphone-position{
+margin-right: 20px;    
+}
+.Iphone-nav{
+    display:inline;
+}
+.Iphone-nav-flex{
+    display: flex;
+    justify-content:space-between;
+    
+}
+.img-logo1{
+display: inline;
+}
+.nav-unshown{
+display: none;
+}
+.line{
+    width: 40px;
+    height: 7px;
+    background-color: black;
+    margin-top: 3px; 
+}
+
+/*開く----------------------------------------------------*/
+#nav-input:checked ~ #nav-content{
+transform: translateX(467px);
+}
+/*開いたら-----------*/
+ #nav-content{ 
+background-color: burlywood;
+height: 100%;
+ transform: translateX(767px);/*元の位置はここだから */
+transition: 0.5s transform;
+z-index: 9999;
+position: fixed;
+width: 90%;
+max-width: 330px;
+ } 
+#nav-close{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+}
+/*閉じる-----------------------------------------------------*/
+#nav-input:checked ~ #nav-close {
+display: block;
+opacity: .5;
+}
+
+/*header-----------------------------*/
+header{
+    width: 100%;
+    height: auto;
+}
+
+
+/*course-----------------------------*/
+.h3-text-1{
+    display: block;
+    text-align: center;
+}
+.h3-text-2{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.main-img{
+    width: 100%;
+}
+.img{
+    width: 100%;
+}
+.h4-h6{
+    width: 100%;
+    padding-left: 0px;
+}
+.h5{
+    width: 100%;  
+    padding-right: 0px;
+}
+
+/*news-----------------------------*/
+.news-text{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.news-img{
+    width: 100%;
+    height: auto;
+}
+.main-news{
+    padding-left: 0px;
+}
+.name-adress{
+    padding-left: 0px;
+}
+
+/*form-----------------------------*/
+.form-sabname{
+    margin-left: 0px;
+}
+.form-left{
+    margin-left: 0px;
+}
+.form-name{
+    margin-right: 0px;
+}
+.form-email{
+    margin-left: 0px;
+}
+.form-p{
+    width: 120px;
+}
+
+}
