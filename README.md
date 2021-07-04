@@ -1,8 +1,6 @@
 # demo_site
-practice HTML , css
 
-
-###HTMLとCSSの練習
+### HTMLとCSSの練習
 チーズアカデミー、デモサイトの練習を行いました。
 
 楽しかったこと
